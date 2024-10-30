@@ -6,6 +6,7 @@ import pandas as pd
 from signal_processor import PowerSignalProcessor, generate_test_data
 from ml_models import PowerConsumptionPredictor, AnomalyDetector
 import time
+from data_simulator import PowerDataSimulator
 
 def init_dashboard():
     st.set_page_config(page_title="Power Grid Analyzer", layout="wide")
@@ -78,6 +79,17 @@ def init_dashboard():
         paper_bgcolor='rgba(0,0,0,0)'
     )
     st.plotly_chart(fig2, use_container_width=True)
+    
+    # Initialize simulator
+    if 'simulator' not in st.session_state:
+        st.session_state.simulator = PowerDataSimulator()
+        st.session_state.data = {'timestamp': [], 'load': []}
+    
+    # Add real-time update button
+    if st.button('Update Data'):
+        timestamp, load = st.session_state.simulator.generate_realtime_data()
+        st.session_state.data['timestamp'].append(timestamp)
+        st.session_state.data['load'].append(load)
 
 if __name__ == "__main__":
     init_dashboard()
