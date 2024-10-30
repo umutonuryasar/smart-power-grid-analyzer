@@ -8,7 +8,16 @@ from ml_models import PowerConsumptionPredictor, AnomalyDetector
 import time
 
 def init_dashboard():
-    st.set_page_config(page_title="Power Grid Analyzer", layout="wide", theme="dark")
+    st.set_page_config(page_title="Power Grid Analyzer", layout="wide")
+    st.markdown("""
+       <style>
+       .stApp {
+           background-color: #0E1117;
+           color: white;
+       }
+       </style>
+   """, unsafe_allow_html=True)
+    
     st.title("Smart Power Grid Analysis")
     
     # Sidebar controls
