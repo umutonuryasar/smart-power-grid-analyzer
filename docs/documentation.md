@@ -312,20 +312,18 @@ if anomalies.any():
 
 ### 3. Load Forecasting
 
+```python
 # Initialize predictor with custom parameters
-
 predictor = PowerConsumptionPredictor(
     sequence_length=24,
     forecast_horizon=12
 )
 
 # Train and forecast
-
 predictor.train(historical_data)
 future_load = predictor.predict(recent_data)
 
 # Use forecasts
-
 print(f"Predicted load: {future_load[0]} W")
 
 ```
