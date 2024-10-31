@@ -1,52 +1,50 @@
 # Smart Power Grid Analyzer
 
-Real-time power grid analysis system with machine learning capabilities for power quality monitoring and anomaly detection.
+Real-time power grid monitoring and analysis system with ML-powered predictions and anomaly detection.
 
-## Features
+## Quick Start
 
-- Power signal processing and spectral analysis
-- Real-time monitoring dashboard using Streamlit
-- RMS and THD calculations
-- Frequency domain visualization
-- Machine learning-based load prediction
-- Anomaly detection
-
-## Tech Stack
-
-- Python 3.11+
-- Streamlit
-- NumPy/SciPy
-- TensorFlow
-- Plotly
-- Pandas
-
-## Installation
-
+1. Install dependencies:
 ```bash
-git clone https://github.com/yourusername/smart-power-grid-analyzer.git
-cd smart-power-grid-analyzer
 pip install -r requirements.txt
 ```
 
-## Usage
-
+2. Run the dashboard:
 ```bash
 streamlit run src/main.py
 ```
 
+3. Open your browser and navigate to the displayed URL (typically http://localhost:8501)
+
+## Features
+
+- Real-time power signal monitoring
+- Power quality analysis
+- ML-based consumption prediction
+- Anomaly detection
+- Interactive dashboard
+- Frequency analysis
+
 ## Project Structure
 
+```
 smart-power-grid-analyzer/
 ├── src/
-│   ├── signal_processor.py    # Signal processing module
-│   ├── ml_models.py          # Machine learning models
-│   ├── dashboard.py          # Streamlit dashboard
-│   ├── data_simulator.py     # Real-time data simulation
-│   └── main.py              # Main application entry
-├── tests/                    # Unit tests
-├── data/                     # Data storage
-└── docs/                     # Documentation
+│   ├── main.py
+│   ├── dashboard.py
+│   ├── signal_processor.py
+│   ├── data_simulator.py
+│   └── ml_models.py
+├── docs/
+│   └── documentation.md
+├── requirements.txt
+└── README.md
+```
 
-## LICENSE
+## Documentation
 
-MIT
+For detailed documentation and examples, see [documentation.md](docs/documentation.md)
+
+## License
+
+MIT License - see LICENSE file for details.
